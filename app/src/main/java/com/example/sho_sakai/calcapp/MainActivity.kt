@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        val num1 = editText1.text.toString().toDouble()
-        val num2 = editText2.text.toString().toDouble()
+        val num1 = editText1.text.toString()
+        val num2 = editText2.text.toString()
         var test: Double = 0.0
 
         //try {
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         //} finally {
         //    Log.d("kotlintest", "ans = " + test.toString())
         //}
-        if (num1 == null || num2 == null) {
+        if (num1.isEmpty() || num2.isEmpty() || num1!="." || num2!=".") {
             Snackbar.make(v, "エラー", Snackbar.LENGTH_LONG)
                        .setAction("Action"){
                             Log.d("UI_PARTS", "Snackbarをタップした")
